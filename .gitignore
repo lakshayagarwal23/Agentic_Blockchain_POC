@@ -1,27 +1,99 @@
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# C extensions
 *.so
-.Python
+
+# Virtual environment
 venv/
-ENV/
 env/
-# Database
-*.db
-*.sqlite3
+
+# Environment variables and config
+.env
+
 # Logs
-logs/
 *.log
-# Uploads
-uploads/
-# IDE
+logs/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyInstaller
+*.manifest
+*.spec
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# VSCode / IDEs
 .vscode/
 .idea/
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS duplicate metadata files
+._*
+
+# Thumbnails
+._Thumbs.db
+
+# Deployment / Packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Node
+node_modules/
+
+# Static files
+*.tar.gz
+*.zip
+
+# Ignore any personal notes or temp scripts
+*.bak
+*.tmp
 *.swp
 *.swo
-# OS
-.DS_Store
-Thumbs.db
-# Environment
-.env
+
+# Ignore database files
+*.sqlite3
+*.db
+instance/
