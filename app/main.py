@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -7,15 +12,21 @@ import logging
 from datetime import datetime
 
 from app.models.database import db, User, Asset, Transaction
+
 from app.agents.nlp_agent import NLPAgent
+
 from app.agents.verification_agent import VerificationAgent
 from app.agents.tokenization_agent import TokenizationAgent
 
-# Initialize Flask app
+from flask import Flask
+
+
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 app.config['SECRET_KEY'] = 'your-secret-key-change-this'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///rwa_tokenization.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+
 
 # Initialize extensions
 db.init_app(app)

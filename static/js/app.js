@@ -135,8 +135,8 @@ class RWAApp {
                             <h6 class="card-title">${this.getAssetTypeIcon(asset.asset_type)} ${asset.asset_type.replace('_', ' ').toUpperCase()}</h6>
                             <p class="card-text small">${asset.description.substring(0, 80)}...</p>
                             <div class="d-flex gap-2">
-                                <span class="badge bg-${this.getStatusColor(asset.verification_status)}">${asset.verification_status}</span>
-                                <span class="badge bg-secondary">$${asset.estimated_value.toLocaleString()}</span>
+                                <span class="badge bg-secondary">${asset.estimated_value?.toLocaleString() || 'N/A'} ${asset.currency || ''}</span>
+
                                 ${asset.token_id ? '<span class="badge bg-success">Tokenized</span>' : ''}
                             </div>
                         </div>
@@ -166,7 +166,8 @@ class RWAApp {
                         <h6>Asset Information</h6>
                         <table class="table table-sm">
                             <tr><td><strong>Type:</strong></td><td>${asset.asset_type.replace('_', ' ')}</td></tr>
-                            <tr><td><strong>Value:</strong></td><td>$${asset.estimated_value.toLocaleString()}</td></tr>
+                            <tr><td><strong>Value:</strong></td><td>${asset.estimated_value?.toLocaleString() || 'N/A'} ${asset.currency || ''}</td></tr>
+
                             <tr><td><strong>Location:</strong></td><td>${asset.location}</td></tr>
                             <tr><td><strong>Status:</strong></td><td><span class="badge bg-${this.getStatusColor(asset.verification_status)}">${asset.verification_status}</span></td></tr>
                             <tr><td><strong>Created:</strong></td><td>${new Date(asset.created_at).toLocaleDateString()}</td></tr>
